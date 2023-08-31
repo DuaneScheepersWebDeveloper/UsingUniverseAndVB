@@ -6,6 +6,9 @@ Public Class Form1
     Private BOOKTITLES As UniFile
     Private Connected As Boolean = False
     Dim Cmd As UniCommand
+    Dim Subr As UniSubroutine
+    Dim Details As UniDynArray
+
 
     Private Sub Btn_connect_Click(ByVal sender As Object, ByVal e As EventArgs) Handles Btn_connect.Click
         Try
@@ -41,9 +44,11 @@ Public Class Form1
     End Sub
 
     Private Sub txtID_LostFocus(ByVal sender As Object, ByVal e As EventArgs) Handles txtID.LostFocus
-        If ReadTitle(txtID.Text) = False Then
-            txtID.Text = ""
-            txtID.Focus()
+        If txtID.Text <> "" Then
+            If ReadDetails(txtID.Text) = False Then
+                txtID.Text = ""
+                txtID.Focus()
+            End If
         End If
     End Sub
 
@@ -123,7 +128,79 @@ Public Class Form1
         ReadTitle(TitleId)
     End Sub
 
-    Private Sub title_id_label_Click(sender As Object, e As EventArgs) Handles title_id_label.Click
+    Function ReadDetails(ByVal TitleId As String) As Boolean
 
-    End Sub
+        Try
+            Subr = Sess.CreateUniSubroutine("GETTITLE", 3)
+        Catch ex As Exception
+            MsgBox("Cannot find subroutine")
+            Return False
+        End Try
+        Subr.SetArg(0, TitleId)
+        Subr.Call()
+        Details = Subr.GetArgDynArray(1)
+        txtTitle.Text = Details.Extract(1).ToString
+        txtAuthorID.Text = Details.Extract(2).ToString
+        lblAuthor.Text = Details.Extract(3).ToString
+        cboType.Text = Details.Extract(4).ToString
+        txtISBN.Text = Details.Extract(5).ToString
+        txtPrice.Text = Details.Extract(6).ToString
+        txtStock.Text = Details.Extract(7).ToString
+        cboDept.Text = Details.Extract(8).ToString
+        cboGenre.Text = Details.Extract(9).ToString
+        Return True
+    End Function
+
+    Private Function WriteTitle() As Boolean
+        Dim Subr As UniSubroutine
+        Dim Details As UniDynArray
+        Dim Err As String = ""
+        Details = Sess.CreateUniDynArray("")
+        Subr = Sess.CreateUniSubroutine("WriteTitle", 3)
+        Details.Replace(1, txtTitle.Text)
+        Details.Replace(2, txtAuthorID.Text)
+        Details.Replace(4, cboType.Text)
+        Details.Replace(5, txtISBN.Text)
+        Details.Replace(6, txtPrice.Text)
+        Details.Replace(7, txtStock.Text)
+        Details.Replace(8, cboDept.Text)
+        Details.Replace(9, cboGenre.Text)
+        Subr.SetArg(0, txtID.Text)
+        Subr.SetArg(1, Details.StringValue)
+        Subr.Call()
+        Err = Subr.GetArg(2)
+        If Err <> "" Then
+            MsgBox(Err)
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function WriteTitle() As Boolean
+        Dim Subr As UniSubroutine
+        Dim Details As UniDynArray
+        Dim Err As String = ""
+        Details = Sess.CreateUniDynArray("")
+        Subr = Sess.CreateUniSubroutine("WriteTitle", 3)
+        Details.Replace(1, txtTitle.Text)
+        Details.Replace(2, txtAuthorID.Text)
+        Details.Replace(4, cboType.Text)
+        Details.Replace(5, txtISBN.Text)
+        Details.Replace(6, txtPrice.Text)
+        Details.Replace(7, txtStock.Text)
+        Details.Replace(8, cboDept.Text)
+        Details.Replace(9, cboGenre.Text)
+        Subr.SetArg(0, txtID.Text)
+        Subr.SetArg(1, Details.StringValue)
+        Subr.Call()
+        Err = Subr.GetArg(2)
+        If Err <> "" Then
+            MsgBox(Err)
+            Return False
+        End If
+        Return True
+    End Function
+
 End Class
+
+

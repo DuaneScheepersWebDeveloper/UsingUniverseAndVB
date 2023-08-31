@@ -22,6 +22,8 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Btn_connect = New System.Windows.Forms.Button()
         Me.title_id_label = New System.Windows.Forms.Label()
         Me.short_title_label = New System.Windows.Forms.Label()
@@ -43,13 +45,14 @@ Partial Class Form1
         Me.cboGenre = New System.Windows.Forms.ComboBox()
         Me.btn_update = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.lblAuthor = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Btn_connect
         '
         Me.Btn_connect.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Btn_connect.Location = New System.Drawing.Point(174, 45)
+        Me.Btn_connect.Location = New System.Drawing.Point(154, 12)
         Me.Btn_connect.Name = "Btn_connect"
         Me.Btn_connect.Size = New System.Drawing.Size(88, 28)
         Me.Btn_connect.TabIndex = 0
@@ -60,7 +63,7 @@ Partial Class Form1
         '
         Me.title_id_label.AutoSize = True
         Me.title_id_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.title_id_label.Location = New System.Drawing.Point(442, 100)
+        Me.title_id_label.Location = New System.Drawing.Point(430, 46)
         Me.title_id_label.Name = "title_id_label"
         Me.title_id_label.Size = New System.Drawing.Size(56, 20)
         Me.title_id_label.TabIndex = 1
@@ -70,7 +73,7 @@ Partial Class Form1
         '
         Me.short_title_label.AutoSize = True
         Me.short_title_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.short_title_label.Location = New System.Drawing.Point(439, 135)
+        Me.short_title_label.Location = New System.Drawing.Point(430, 78)
         Me.short_title_label.Name = "short_title_label"
         Me.short_title_label.Size = New System.Drawing.Size(81, 20)
         Me.short_title_label.TabIndex = 2
@@ -80,7 +83,7 @@ Partial Class Form1
         '
         Me.author_label.AutoSize = True
         Me.author_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.author_label.Location = New System.Drawing.Point(439, 161)
+        Me.author_label.Location = New System.Drawing.Point(430, 110)
         Me.author_label.Name = "author_label"
         Me.author_label.Size = New System.Drawing.Size(57, 20)
         Me.author_label.TabIndex = 3
@@ -90,7 +93,7 @@ Partial Class Form1
         '
         Me.media_type_label.AutoSize = True
         Me.media_type_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.media_type_label.Location = New System.Drawing.Point(439, 188)
+        Me.media_type_label.Location = New System.Drawing.Point(430, 188)
         Me.media_type_label.Name = "media_type_label"
         Me.media_type_label.Size = New System.Drawing.Size(90, 20)
         Me.media_type_label.TabIndex = 4
@@ -100,7 +103,7 @@ Partial Class Form1
         '
         Me.isbn_label.AutoSize = True
         Me.isbn_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.isbn_label.Location = New System.Drawing.Point(439, 214)
+        Me.isbn_label.Location = New System.Drawing.Point(430, 222)
         Me.isbn_label.Name = "isbn_label"
         Me.isbn_label.Size = New System.Drawing.Size(47, 20)
         Me.isbn_label.TabIndex = 5
@@ -110,7 +113,7 @@ Partial Class Form1
         '
         Me.department_label.AutoSize = True
         Me.department_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.department_label.Location = New System.Drawing.Point(439, 263)
+        Me.department_label.Location = New System.Drawing.Point(430, 262)
         Me.department_label.Name = "department_label"
         Me.department_label.Size = New System.Drawing.Size(94, 20)
         Me.department_label.TabIndex = 6
@@ -120,7 +123,7 @@ Partial Class Form1
         '
         Me.genre_label.AutoSize = True
         Me.genre_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.genre_label.Location = New System.Drawing.Point(439, 293)
+        Me.genre_label.Location = New System.Drawing.Point(430, 307)
         Me.genre_label.Name = "genre_label"
         Me.genre_label.Size = New System.Drawing.Size(54, 20)
         Me.genre_label.TabIndex = 7
@@ -130,7 +133,7 @@ Partial Class Form1
         '
         Me.number_in_stock_label.AutoSize = True
         Me.number_in_stock_label.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.number_in_stock_label.Location = New System.Drawing.Point(440, 325)
+        Me.number_in_stock_label.Location = New System.Drawing.Point(430, 348)
         Me.number_in_stock_label.Name = "number_in_stock_label"
         Me.number_in_stock_label.Size = New System.Drawing.Size(126, 20)
         Me.number_in_stock_label.TabIndex = 8
@@ -140,7 +143,7 @@ Partial Class Form1
         '
         Me.Price.AutoSize = True
         Me.Price.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Price.Location = New System.Drawing.Point(442, 356)
+        Me.Price.Location = New System.Drawing.Point(430, 387)
         Me.Price.Name = "Price"
         Me.Price.Size = New System.Drawing.Size(44, 20)
         Me.Price.TabIndex = 9
@@ -148,42 +151,42 @@ Partial Class Form1
         '
         'txtID
         '
-        Me.txtID.Location = New System.Drawing.Point(571, 100)
+        Me.txtID.Location = New System.Drawing.Point(562, 46)
         Me.txtID.Name = "txtID"
         Me.txtID.Size = New System.Drawing.Size(161, 20)
         Me.txtID.TabIndex = 10
         '
         'txtTitle
         '
-        Me.txtTitle.Location = New System.Drawing.Point(571, 135)
+        Me.txtTitle.Location = New System.Drawing.Point(562, 78)
         Me.txtTitle.Name = "txtTitle"
         Me.txtTitle.Size = New System.Drawing.Size(230, 20)
         Me.txtTitle.TabIndex = 11
         '
         'txtAuthorID
         '
-        Me.txtAuthorID.Location = New System.Drawing.Point(571, 161)
+        Me.txtAuthorID.Location = New System.Drawing.Point(562, 110)
         Me.txtAuthorID.Name = "txtAuthorID"
         Me.txtAuthorID.Size = New System.Drawing.Size(230, 20)
         Me.txtAuthorID.TabIndex = 12
         '
         'txtISBN
         '
-        Me.txtISBN.Location = New System.Drawing.Point(571, 214)
+        Me.txtISBN.Location = New System.Drawing.Point(562, 222)
         Me.txtISBN.Name = "txtISBN"
         Me.txtISBN.Size = New System.Drawing.Size(230, 20)
         Me.txtISBN.TabIndex = 13
         '
         'txtStock
         '
-        Me.txtStock.Location = New System.Drawing.Point(571, 327)
+        Me.txtStock.Location = New System.Drawing.Point(562, 348)
         Me.txtStock.Name = "txtStock"
         Me.txtStock.Size = New System.Drawing.Size(130, 20)
         Me.txtStock.TabIndex = 14
         '
         'txtPrice
         '
-        Me.txtPrice.Location = New System.Drawing.Point(571, 358)
+        Me.txtPrice.Location = New System.Drawing.Point(562, 387)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(130, 20)
         Me.txtPrice.TabIndex = 15
@@ -191,7 +194,7 @@ Partial Class Form1
         'cboType
         '
         Me.cboType.FormattingEnabled = True
-        Me.cboType.Location = New System.Drawing.Point(571, 187)
+        Me.cboType.Location = New System.Drawing.Point(562, 187)
         Me.cboType.Name = "cboType"
         Me.cboType.Size = New System.Drawing.Size(230, 21)
         Me.cboType.TabIndex = 16
@@ -199,7 +202,7 @@ Partial Class Form1
         'cboDept
         '
         Me.cboDept.FormattingEnabled = True
-        Me.cboDept.Location = New System.Drawing.Point(571, 262)
+        Me.cboDept.Location = New System.Drawing.Point(562, 262)
         Me.cboDept.Name = "cboDept"
         Me.cboDept.Size = New System.Drawing.Size(121, 21)
         Me.cboDept.TabIndex = 17
@@ -207,7 +210,7 @@ Partial Class Form1
         'cboGenre
         '
         Me.cboGenre.FormattingEnabled = True
-        Me.cboGenre.Location = New System.Drawing.Point(571, 292)
+        Me.cboGenre.Location = New System.Drawing.Point(562, 306)
         Me.cboGenre.Name = "cboGenre"
         Me.cboGenre.Size = New System.Drawing.Size(121, 21)
         Me.cboGenre.TabIndex = 18
@@ -215,7 +218,7 @@ Partial Class Form1
         'btn_update
         '
         Me.btn_update.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.btn_update.Location = New System.Drawing.Point(553, 411)
+        Me.btn_update.Location = New System.Drawing.Point(500, 424)
         Me.btn_update.Name = "btn_update"
         Me.btn_update.Size = New System.Drawing.Size(192, 28)
         Me.btn_update.TabIndex = 19
@@ -224,17 +227,44 @@ Partial Class Form1
         '
         'DataGridView1
         '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 79)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 46)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(395, 407)
         Me.DataGridView1.TabIndex = 20
+        '
+        'lblAuthor
+        '
+        Me.lblAuthor.AutoSize = True
+        Me.lblAuthor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAuthor.Location = New System.Drawing.Point(558, 150)
+        Me.lblAuthor.Name = "lblAuthor"
+        Me.lblAuthor.Size = New System.Drawing.Size(57, 20)
+        Me.lblAuthor.TabIndex = 21
+        Me.lblAuthor.Text = "Label1"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 515)
+        Me.ClientSize = New System.Drawing.Size(804, 464)
+        Me.Controls.Add(Me.lblAuthor)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_update)
         Me.Controls.Add(Me.cboGenre)
@@ -285,4 +315,5 @@ Partial Class Form1
     Friend WithEvents cboGenre As ComboBox
     Friend WithEvents btn_update As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents lblAuthor As Label
 End Class
