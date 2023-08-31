@@ -1,0 +1,15 @@
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.vbproj.AssemblyReference.cache
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.Resources.resources
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.vbproj.GenerateResource.cache
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.vbproj.CoreCompileInputs.cache
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\bin\Debug\UsingUniverseAndVB.exe.config
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\bin\Debug\UsingUniverseAndVB.exe
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\bin\Debug\UsingUniverseAndVB.pdb
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\bin\Debug\UsingUniverseAndVB.xml
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\bin\Debug\UODOTNET.dll
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\bin\Debug\UODOTNET.xml
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.Form1.resources
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.vbproj.CopyComplete
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.exe
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.xml
+D:\Test\UsingUniverseAndVB\UsingUniverseAndVB\obj\Debug\UsingUniverseAndVB.pdb
