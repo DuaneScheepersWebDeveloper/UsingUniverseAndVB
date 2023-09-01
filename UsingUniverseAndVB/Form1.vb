@@ -176,30 +176,7 @@ Public Class Form1
         Return True
     End Function
 
-    Private Function WriteTitle() As Boolean
-        Dim Subr As UniSubroutine
-        Dim Details As UniDynArray
-        Dim Err As String = ""
-        Details = Sess.CreateUniDynArray("")
-        Subr = Sess.CreateUniSubroutine("WriteTitle", 3)
-        Details.Replace(1, txtTitle.Text)
-        Details.Replace(2, txtAuthorID.Text)
-        Details.Replace(4, cboType.Text)
-        Details.Replace(5, txtISBN.Text)
-        Details.Replace(6, txtPrice.Text)
-        Details.Replace(7, txtStock.Text)
-        Details.Replace(8, cboDept.Text)
-        Details.Replace(9, cboGenre.Text)
-        Subr.SetArg(0, txtID.Text)
-        Subr.SetArg(1, Details.StringValue)
-        Subr.Call()
-        Err = Subr.GetArg(2)
-        If Err <> "" Then
-            MsgBox(Err)
-            Return False
-        End If
-        Return True
-    End Function
+
 
 End Class
 
